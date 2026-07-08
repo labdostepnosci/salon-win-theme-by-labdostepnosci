@@ -9,11 +9,11 @@ Zaprojektowany zgodnie z trendami 2026: ciemna paleta, serif display font, asyme
 
 | Pole | Wartość |
 |------|---------|
-| Aktualna wersja motywu | `0.0.8` |
+| Aktualna wersja motywu | `0.0.9` |
 | Data ostatniej wersji | 2026-07-08 |
-| Tag release | `v0.0.8` |
+| Tag release | `v0.0.9` |
 | Repozytorium | `labdostepnosci/salon-win-theme-by-labdostepnosci` |
-| Paczka release | `salon-win-0.0.8.zip` oraz `salon-win-theme-0.0.8.zip` |
+| Paczka release | `salon-win-0.0.9.zip` oraz `salon-win-theme-0.0.9.zip` |
 
 ---
 
@@ -21,6 +21,7 @@ Zaprojektowany zgodnie z trendami 2026: ciemna paleta, serif display font, asyme
 
 | Wersja | Data | Typ zmian | Changelog |
 |--------|------|-----------|-----------|
+| `0.0.9` | 2026-07-08 | Blog archive | Poprawiono karty wpisów na stronie bloga: zdjęcie, tytuł, zajawka i opisowy link są widoczne od razu, z fallbackiem dla wpisów bez miniatury. |
 | `0.0.8` | 2026-07-08 | Repo i updater | Zmieniono nazwę repozytorium na `salon-win-theme-by-labdostepnosci`; zaktualizowano `GitHub Theme URI` i konfigurację updatera, aby automatyczne aktualizacje korzystały z nowego repozytorium. |
 | `0.0.7` | 2026-07-08 | Release automation | Uruchomiono automatyczne publikowanie GitHub Releases po wypchnięciu taga `vX.Y.Z`; dodano workflow GitHub Actions przygotowujący paczki ZIP motywu; uporządkowano wersjonowanie od `0.0.7`. |
 | `0.0.5` | 2026-07-08 | System wizualny | Ujednolicono szablony stron, wpisów, archiwów, strony 404 i WooCommerce z językiem wizualnym strony głównej; dodano style dla treści, nagłówków, zdjęć, galerii, przycisków, cytatów, paginacji oraz bloków Gutenberg, Kadence i UAGB. |

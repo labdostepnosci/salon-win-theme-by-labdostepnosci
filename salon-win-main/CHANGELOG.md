@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.9] - 2026-07-08
+
+### Changed
+- Poprawiono widok archiwum bloga, aby każda karta wpisu od razu pokazywała zdjęcie wyróżniające, tytuł, zajawkę i opisowy link do pełnego wpisu.
+- Wydzielono czytelniejsze style kart wpisów blogowych z zachowaniem estetyki Salon Win oraz responsywnej siatki na desktopie i mobile.
+- Dodano bezpieczny wariant karty dla wpisów bez zdjęcia wyróżniającego.
+- Podbito wersję motywu do `0.0.9`.
+
+### Checked
+- Sprawdzono składnię PHP plików szablonów.
+- Sprawdzono, że mechanizm GitHub Releases / updater nie został zmieniony.
+
 ## [0.0.8] - 2026-07-08
 
 ### Changed

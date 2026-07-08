@@ -37,18 +37,38 @@ get_header();
                 <?php while ( have_posts() ) : the_post(); ?>
                 <article id="post-<?php the_ID(); ?>" <?php post_class( 'wine-card sw-archive-card' ); ?>>
                     <?php if ( has_post_thumbnail() ) : ?>
-                    <a href="<?php the_permalink(); ?>" class="wine-card-image" tabindex="-1">
-                        <?php the_post_thumbnail( 'sw-gallery', [ 'loading' => 'lazy', 'alt' => get_the_title() ] ); ?>
+                    <?php
+                    $thumbnail_id  = get_post_thumbnail_id();
+                    $thumbnail_alt = trim( (string) get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true ) );
+                    ?>
+                    <a href="<?php the_permalink(); ?>" class="wine-card-image sw-archive-image-link" aria-label="<?php echo esc_attr( sprintf( __( 'Przejdź do wpisu: %s', 'salon-win' ), get_the_title() ) ); ?>">
+                        <?php
+                        the_post_thumbnail(
+                            'sw-gallery',
+                            [
+                                'loading' => 'lazy',
+                                'alt'     => $thumbnail_alt ?: get_the_title(),
+                            ]
+                        );
+                        ?>
                     </a>
+                    <?php else : ?>
+                    <div class="wine-card-image sw-archive-image-fallback" aria-hidden="true">
+                        <span><?php esc_html_e( 'Salon Win', 'salon-win' ); ?></span>
+                    </div>
                     <?php endif; ?>
                     <div class="wine-card-body">
-                        <span class="wine-region"><?php echo get_the_date(); ?></span>
-                        <h2 class="wine-name" style="color: var(--color-ink);">
+                        <time class="wine-region" datetime="<?php echo esc_attr( get_the_date( 'c' ) ); ?>">
+                            <?php echo esc_html( get_the_date() ); ?>
+                        </time>
+                        <h2 class="wine-name sw-archive-title">
                             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                         </h2>
-                        <p class="body-sm text-muted sw-archive-excerpt"><?php the_excerpt(); ?></p>
-                        <a href="<?php the_permalink(); ?>" class="btn btn-ghost sw-archive-link">
-                            <span><?php esc_html_e( 'Przeczytaj wpis', 'salon-win' ); ?></span>
+                        <p class="body-sm text-muted sw-archive-excerpt">
+                            <?php echo wp_kses_post( wp_trim_words( get_the_excerpt(), 36, '&hellip;' ) ); ?>
+                        </p>
+                        <a href="<?php the_permalink(); ?>" class="btn btn-ghost sw-archive-link" aria-label="<?php echo esc_attr( sprintf( __( 'Przeczytaj cały wpis: %s', 'salon-win' ), get_the_title() ) ); ?>">
+                            <span><?php esc_html_e( 'Przeczytaj cały wpis', 'salon-win' ); ?></span>
                         </a>
                     </div>
                 </article>

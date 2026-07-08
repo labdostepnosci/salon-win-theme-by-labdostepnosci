@@ -4,7 +4,7 @@ Theme URI: https://salon-win.pl
 Author: labdostepnosci
 Author URI: https://labdostepnosci.pl
 Description: Motyw WordPress dla strony Salon Win.
-Version: 0.0.8
+Version: 0.0.9
 Requires at least: 6.0
 Tested up to: 6.6
 Requires PHP: 8.1
@@ -2175,28 +2175,102 @@ h1, h2, h3, h4 {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
   margin-bottom: var(--space-xl);
+  align-items: stretch;
 }
 
 .sw-archive-card {
   background: var(--color-white);
   border: 1px solid rgba(26,10,0,0.08);
+  border-radius: var(--radius-md);
+  box-shadow: 0 18px 46px rgba(26,10,0,0.08);
   cursor: default;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.sw-archive-card:hover {
+  border-color: rgba(139,26,47,0.24);
+  box-shadow: 0 24px 62px rgba(26,10,0,0.13);
+}
+
+.sw-archive-card .wine-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.35rem;
 }
 
 .sw-archive-card .wine-card-image {
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/10;
+  background: var(--color-mahogany);
+  display: block;
+  flex-shrink: 0;
+}
+
+.sw-archive-card .wine-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sw-archive-card .sw-archive-image-link:focus-visible {
+  outline: 3px solid var(--color-gold);
+  outline-offset: -6px;
+}
+
+.sw-archive-image-fallback {
+  align-items: center;
+  background:
+    linear-gradient(135deg, rgba(26,10,0,0.94), rgba(44,24,16,0.88)),
+    var(--color-mahogany);
+  display: flex;
+  justify-content: center;
+}
+
+.sw-archive-image-fallback span {
+  color: var(--color-gold);
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  letter-spacing: 0.08em;
 }
 
 .sw-archive-card .wine-name {
   color: var(--color-ink);
+  font-size: clamp(1.35rem, 1.7vw, 1.7rem);
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.sw-archive-card .wine-name a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-base);
+}
+
+.sw-archive-card .wine-name a:hover,
+.sw-archive-card .wine-name a:focus-visible {
+  color: var(--color-burgundy);
+}
+
+.sw-archive-card .wine-region {
+  color: var(--color-burgundy);
+  margin-bottom: 0.65rem;
 }
 
 .sw-archive-excerpt {
+  color: var(--color-gray-mid);
+  line-height: 1.75;
   margin-top: 0.65rem;
+  margin-bottom: var(--space-md);
+  max-width: 42rem;
 }
 
 .sw-archive-link {
-  margin-top: var(--space-sm);
+  align-self: flex-start;
+  margin-top: auto;
   padding: 0.65rem 1.25rem;
 }
 

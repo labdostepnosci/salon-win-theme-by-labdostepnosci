@@ -1,6 +1,6 @@
 # Wydania motywu Salon Win
 
-Aktualna wersja motywu `Salon Win by labdostepnosci` to `0.0.8`. Numer wersji
+Aktualna wersja motywu `Salon Win by labdostepnosci` to `0.0.9`. Numer wersji
 jest ustawiany w nagłówku pliku `style.css` i musi być zgodny z SemVer.
 
 ## Publikowanie wersji przez GitHub Releases
@@ -34,8 +34,8 @@ salon-win-theme-X.Y.Z.zip
 Przykłady:
 
 ```text
-salon-win-0.0.8.zip
-salon-win-theme-0.0.8.zip
+salon-win-0.0.9.zip
+salon-win-theme-0.0.9.zip
 ```
 
 W katalogu głównym archiwum musi znajdować się jeden katalog `salon-win/`,
