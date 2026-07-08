@@ -5,6 +5,32 @@ Zaprojektowany zgodnie z trendami 2026: ciemna paleta, serif display font, asyme
 
 ---
 
+## Aktualna wersja
+
+| Pole | Wartość |
+|------|---------|
+| Aktualna wersja motywu | `0.0.7` |
+| Data ostatniej wersji | 2026-07-08 |
+| Tag release | `v0.0.7` |
+| Paczka release | `salon-win-0.0.7.zip` oraz `salon-win-theme-0.0.7.zip` |
+
+---
+
+## Historia wersji i changelog
+
+| Wersja | Data | Typ zmian | Changelog |
+|--------|------|-----------|-----------|
+| `0.0.7` | 2026-07-08 | Release automation | Uruchomiono automatyczne publikowanie GitHub Releases po wypchnięciu taga `vX.Y.Z`; dodano workflow GitHub Actions przygotowujący paczki ZIP motywu; uporządkowano wersjonowanie od `0.0.7`. |
+| `0.0.5` | 2026-07-08 | System wizualny | Ujednolicono szablony stron, wpisów, archiwów, strony 404 i WooCommerce z językiem wizualnym strony głównej; dodano style dla treści, nagłówków, zdjęć, galerii, przycisków, cytatów, paginacji oraz bloków Gutenberg, Kadence i UAGB. |
+| `0.0.4` | 2026-07-04 | Customizer obrazów | Dodano sekcję `Salon Win — obrazy` w Customizerze, osobne ustawienia `theme_mod` dla kluczowych obrazów oraz funkcję `salon_win_get_image_url()` z fallbackami. |
+| `0.0.3` | 2026-07-04 | Dane kontaktowe | Zaktualizowano adres, telefon, e-mail, godziny, lokalizację Google Maps oraz dane Schema.org. |
+| `0.0.2` | 2026-07-04 | Updater | Dodano własny mechanizm aktualizacji motywu z GitHub Releases, obsługę paczek release, cache API oraz opcjonalny token `SALON_WIN_GITHUB_TOKEN`. |
+| `0.0.1` | 2026-07-04 | Pierwsza wersja | Oznaczono pierwszy stan rozwojowy motywu, ustawiono nagłówki wersjonowania i przygotowano repozytorium do aktualizacji z GitHuba. |
+
+Pełny changelog znajduje się w pliku [`CHANGELOG.md`](CHANGELOG.md).
+
+---
+
 ## Wymagania
 
 | Zależność        | Minimalna wersja |
