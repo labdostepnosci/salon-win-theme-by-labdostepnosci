@@ -4,7 +4,7 @@ Theme URI: https://salon-win.pl
 Author: labdostepnosci
 Author URI: https://labdostepnosci.pl
 Description: Motyw WordPress dla strony Salon Win.
-Version: 0.0.10
+Version: 0.0.11
 Requires at least: 6.0
 Tested up to: 6.6
 Requires PHP: 8.1
@@ -1462,6 +1462,7 @@ h1, h2, h3, h4 {
 .reviews-track {
   display: flex;
   gap: var(--space-md);
+  align-items: stretch;
   will-change: transform;
 }
 
@@ -1470,8 +1471,9 @@ h1, h2, h3, h4 {
   border: 1px solid rgba(245,240,232,0.1);
   border-radius: var(--radius-md);
   padding: var(--space-md) var(--space-md);
-  min-width: 360px;
-  flex-shrink: 0;
+  flex: 0 0 min(360px, 100%);
+  min-width: 0;
+  max-width: 100%;
   transition: var(--transition-base);
 }
 
@@ -1495,7 +1497,12 @@ h1, h2, h3, h4 {
   line-height: 1.5;
   margin-bottom: var(--space-md);
   font-style: italic;
+  overflow-wrap: break-word;
+  word-break: normal;
+  hyphens: auto;
 }
+
+.review-quote p { margin: 0; }
 
 .review-author {
   display: flex;
@@ -2631,7 +2638,25 @@ h1, h2, h3, h4 {
   .footer-bottom { flex-direction: column; gap: var(--space-sm); text-align: center; }
   .gallery-grid { grid-template-columns: 1fr; }
   .display-xl { font-size: 3rem; }
-  .reviews-track .review-card { min-width: 280px; }
+  .reviews-track { gap: var(--space-sm); }
+  .reviews-track .review-card {
+    flex-basis: 100%;
+    width: 100%;
+    min-width: 0;
+    padding: 1.25rem;
+  }
+  .review-quote {
+    font-size: 1.08rem;
+    line-height: 1.62;
+  }
+  .reviews-controls {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .review-platform {
+    flex: 1 1 100%;
+    margin-left: 0;
+  }
   .newsletter-form-row { flex-direction: column; }
   .container,
   .container--narrow { padding: 0 var(--space-sm); }

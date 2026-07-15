@@ -9,11 +9,11 @@ Zaprojektowany zgodnie z trendami 2026: fotograficzny hero, jaśniejsza paleta, 
 
 | Pole | Wartość |
 |------|---------|
-| Aktualna wersja motywu | `0.0.10` |
-| Data ostatniej wersji | 2026-07-09 |
-| Tag release | `v0.0.10` |
+| Aktualna wersja motywu | `0.0.11` |
+| Data ostatniej wersji | 2026-07-15 |
+| Tag release | `v0.0.11` |
 | Repozytorium | `labdostepnosci/salon-win-theme-by-labdostepnosci` |
-| Paczka release | `salon-win-0.0.10.zip` oraz `salon-win-theme-0.0.10.zip` |
+| Paczka release | `salon-win-0.0.11.zip` oraz `salon-win-theme-0.0.11.zip` |
 
 ---
 
@@ -21,6 +21,7 @@ Zaprojektowany zgodnie z trendami 2026: fotograficzny hero, jaśniejsza paleta, 
 
 | Wersja | Data | Typ zmian | Changelog |
 |--------|------|-----------|-----------|
+| `0.0.11` | 2026-07-15 | Mobile reviews | Poprawiono mobilny slider opinii: karty mają stabilną szerokość, tekst łamie się czytelnie, a przesuwanie działa zgodnie z realną szerokością kontenera. |
 | `0.0.10` | 2026-07-09 | Strona główna | Przebudowano hero na slider zdjęć miejsca, rozjaśniono paletę i przesunięto komunikację na apartamenty, wnętrza, sztukę oraz kameralne wydarzenia. |
 | `0.0.9` | 2026-07-08 | Blog archive | Poprawiono karty wpisów na stronie bloga: zdjęcie, tytuł, zajawka i opisowy link są widoczne od razu, z fallbackiem dla wpisów bez miniatury. |
 | `0.0.8` | 2026-07-08 | Repo i updater | Zmieniono nazwę repozytorium na `salon-win-theme-by-labdostepnosci`; zaktualizowano `GitHub Theme URI` i konfigurację updatera, aby automatyczne aktualizacje korzystały z nowego repozytorium. |

@@ -305,23 +305,32 @@
     const btnNext  = qs('#review-next');
     if (!track) return;
 
+    const wrap      = track.closest('.reviews-track-wrap');
     const cards     = qsa('.review-card', track);
+    if (!cards.length) return;
+
+    const trackGap = () => {
+      const styles = getComputedStyle(track);
+      return parseFloat(styles.columnGap || styles.gap || 0) || 0;
+    };
+
     const cardWidth = () => {
       const c = cards[0];
       if (!c) return 380;
-      return c.offsetWidth + parseInt(getComputedStyle(track).gap || 24);
+      return c.getBoundingClientRect().width + trackGap();
+    };
+
+    const getVisible = () => {
+      const step = cardWidth();
+      if (!step) return 1;
+
+      const wrapWidth = wrap ? wrap.getBoundingClientRect().width : window.innerWidth;
+      return Math.max(1, Math.floor((wrapWidth + trackGap()) / step));
     };
 
     let current  = 0;
     let autoplay = null;
     const max    = () => Math.max(0, cards.length - getVisible());
-
-    const getVisible = () => {
-      const w = window.innerWidth;
-      if (w < 640)  return 1;
-      if (w < 1024) return 2;
-      return 3;
-    };
 
     const go = (idx) => {
       current = Math.max(0, Math.min(idx, max()));
@@ -337,7 +346,10 @@
     on(track, 'touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
     on(track, 'touchend',   e => {
       const diff = touchStartX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 50) go(diff > 0 ? current + 1 : current - 1);
+      if (Math.abs(diff) > 50) {
+        go(diff > 0 ? current + 1 : current - 1);
+        resetAuto();
+      }
     });
 
     // Keyboard navigation
@@ -347,6 +359,7 @@
     });
 
     const startAuto = () => {
+      if (max() <= 0) return;
       autoplay = setInterval(() => go(current + 1 > max() ? 0 : current + 1), 5000);
     };
 

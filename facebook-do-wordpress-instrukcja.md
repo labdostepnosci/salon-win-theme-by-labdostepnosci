@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.0.11] - 2026-07-15
+
+### Fixed
+- Poprawiono mobilny slider opinii: karty mają stabilną szerokość, tekst opinii łamie się czytelnie, a przesuwanie liczy realną szerokość kontenera zamiast szerokości okna.
+- Uporządkowano układ kontrolek opinii na małych ekranach, aby przyciski i informacja o ocenie nie ściskały treści.
+
+### Checked
+- Sprawdzono składnię JavaScript pliku `assets/js/main.js` lokalnym runtime’em Node.
+
 ## [0.0.10] - 2026-07-09
 
 ### Changed
